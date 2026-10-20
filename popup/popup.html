@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GitHub 英语记忆助手</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="paper-card">
+      <header class="masthead">
+        <div class="masthead-main">
+          <div class="brand-lockup">
+            <img class="brand-icon" src="../assets/icon-48.png" alt="GitHub 英语记忆助手" width="48" height="48">
+            <div class="brand-copy">
+              <p class="eyebrow">GITHUB VOCABULARY</p>
+              <h1>英语记忆助手</h1>
+              <p class="subtitle">把界面英语变成记得住的词卡</p>
+            </div>
+          </div>
+          <p class="local-note">LOCAL<br>ONLY</p>
+        </div>
+      </header>
+
+      <section class="summary" aria-label="学习概览">
+        <div class="due-poster">
+          <span class="stat-label">WORDS DUE TODAY</span>
+          <strong id="dueCount">0</strong>
+          <span class="due-copy">今日待复习</span>
+          <i aria-hidden="true">01</i>
+        </div>
+        <div class="secondary-stats">
+          <div class="stat"><span>已记词卡</span><strong id="savedCount">0</strong></div>
+          <div class="stat"><span>内置词条</span><strong id="packCount">513</strong></div>
+        </div>
+      </section>
+
+      <button id="openReview" class="primary"><span>开始复习</span><b aria-hidden="true">→</b></button>
+
+      <section class="help card">
+        <div class="section-heading">
+          <span class="section-index" aria-hidden="true">01</span>
+          <h2>开始学习</h2>
+        </div>
+        <ol>
+          <li><span>01</span>选中英文词或短语，点击“解释”。</li>
+          <li><span>02</span>右键也可解释并加入生词本。</li>
+          <li><span>03</span><kbd>Alt</kbd><b>+</b><kbd>G</kbd> 可快速查词。</li>
+        </ol>
+      </section>
+
+      <section class="voice card">
+        <div class="section-heading">
+          <span class="section-index accent" aria-hidden="true">02</span>
+          <h2>朗读偏好</h2>
+        </div>
+        <label class="select-row"><span>口音</span>
+          <select id="voiceLocale" aria-label="朗读口音">
+            <option value="en-US">美式英语</option>
+            <option value="en-GB">英式英语</option>
+          </select>
+        </label>
+        <label class="rate-row"><span>语速</span><output id="rateValue">0.85×</output>
+          <input id="voiceRate" type="range" min="0.6" max="1.1" step="0.05" value="0.85">
+        </label>
+      </section>
+
+      <p class="privacy">所有词库与学习进度仅保存在本机</p>
+    </main>
+    <script src="../data/terms.js"></script>
+    <script src="../data/extended-terms.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>复习 · GitHub 英语记忆助手</title>
+    <link rel="stylesheet" href="review.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="#top" aria-label="GitHub 英语记忆助手首页">
+        <img src="../assets/icon-48.png" alt="" width="36" height="36">
+        <span><small>GITHUB VOCABULARY</small><strong>GitHub 英语记忆助手</strong></span>
+      </a>
+      <p>离线间隔复习</p>
+    </header>
+    <main id="top">
+      <section class="overview" aria-label="学习统计">
+        <div class="overview-due"><span>WORDS DUE / TODAY</span><strong id="dueCount">0</strong><b>待复习</b><i aria-hidden="true">01</i></div>
+        <div class="overview-stat"><span>WORD BOOK</span><strong id="totalCount">0</strong><b>生词本</b></div>
+        <div class="overview-stat"><span>KEPT IN MEMORY</span><strong id="masteredCount">0</strong><b>已较熟练</b></div>
+      </section>
+
+      <section class="review-panel" aria-live="polite">
+        <p class="eyebrow" id="queueLabel">TODAY'S CARD / 今日复习</p>
+        <div id="emptyState" class="empty" hidden>
+          <h1>今天暂时没有待复习词卡</h1>
+          <p>回到 GitHub 页面，选中术语并点击“加入生词本”，新的词卡会出现在这里。</p>
+        </div>
+        <article id="card" class="card" hidden>
+          <div class="term-line"><div><h1 id="term"></h1><p id="ipa"></p><p class="literal"><span>词面义</span><strong id="literal"></strong></p></div><button id="speak" class="speaker" title="朗读" aria-label="朗读此词">🔊</button></div>
+          <section><h2>普通英文义</h2><p id="basic"></p></section>
+          <section id="answer" hidden><h2>GitHub / 代码中的意思</h2><p class="github" id="github"></p><h2>记忆钩子</h2><p class="mnemonic" id="mnemonic"></p><h2>场景</h2><p id="example"></p></section>
+          <button id="reveal" class="reveal">显示答案</button>
+          <div id="grading" class="grading" hidden>
+            <p>你记得怎样？</p>
+            <div>
+              <button data-grade="again" class="again">不会<br><small>10 分钟后</small></button>
+              <button data-grade="hard" class="hard">模糊<br><small>较快复习</small></button>
+              <button data-grade="good" class="good">认识<br><small>正常间隔</small></button>
+              <button data-grade="easy" class="easy">熟练<br><small>更久以后</small></button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="library">
+        <div class="library-heading"><div><h2>我的生词本</h2><p>学习进度只保存在当前浏览器中。</p></div><input id="search" type="search" placeholder="搜索词卡" aria-label="搜索生词本"></div>
+        <div id="termList" class="term-list"></div>
+      </section>
+    </main>
+    <script src="../data/terms.js"></script>
+    <script src="../data/extended-terms.js"></script>
+    <script src="review.js"></script>
+  </body>
+</html>

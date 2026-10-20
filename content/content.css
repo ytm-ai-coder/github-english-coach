@@ -1,0 +1,19 @@
+#gec-selection-trigger {
+  position: fixed;
+  z-index: 2147483646;
+  display: none;
+  border: 1px solid #492967;
+  border-radius: 8px;
+  padding: 7px 12px;
+  background: #492967;
+  color: #fff;
+  box-shadow: 0 5px 12px rgb(73 41 103 / 22%);
+  font: 700 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: .03em;
+  cursor: pointer;
+}
+
+#gec-selection-trigger:hover {
+  background: #37194f;
+  transform: translateY(-1px);
+}
